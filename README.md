@@ -110,8 +110,9 @@ Although there are only a few offers provided in the CSV files, when designing y
 As it was only defined that we should use an SQL database, I chose to use the H2 memory database to make things simpler. Therefore, once the application is started the following flow occurs:
 
 The application creates an instance of H2 in memory and uses the `schema.sql` file to create the table referring to the convergence of offers from multiple providers.
-
 After this, the `CSVLoanDataProvider` auxiliary class receives the parameters responsible for reading the `.csv` files previously defined through the `LeaseOffersNormaliseService` class.
+
+About the definition of the database: I chose to ignore the _IDs_ coming from the providers and create our own _IDs_. I chose to use `Long` which will be converted to `BIGINT` in most databases due to the fact that for queries that involve ranges or ordering, numeric columns, such as `BIGINT`, can be more efficient if we are thinking about creating indices
 
 In other words, after initializing the application, we have an in-memory database with a table called `lease_offer` that represents the consolidated data from the files.
 
