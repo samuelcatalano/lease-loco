@@ -158,7 +158,7 @@ Requests examples and results (updated):
 | `/offers?make=audi&model=a4`                      | return entries with a make of `audi` and a model of `a4`                          |
 | `/offers?mileage=10000`                           | return entries with a mileage of `10000`                                          |
 | `/offers?make=audi&model=a5&mileage=10000`        | return entries with a make of `audi`, a model of `a5` and a mileage of `10000`    |
-| `/offers?term=25`                                 | return entries with a term of `24`                                                |
+| `/offers?term=24`                                 | return entries with a term of `24`                                                |
 | `offers?minPrice=200`                             | return entries with a minimum price of `200`                                      |
 | `offers?maxPrice=170`                             | return entries with a maximum price of `170`                                      |
 | `offers?minPrice=150&maxPrice=170`                | return entries with a price between `150` and `170`                               |
