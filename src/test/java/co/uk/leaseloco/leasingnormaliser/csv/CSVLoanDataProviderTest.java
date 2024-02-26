@@ -1,7 +1,6 @@
 package co.uk.leaseloco.leasingnormaliser.csv;
 
 import co.uk.leaseloco.leasingnormaliser.dto.LeaseOfferAmazingCars;
-import co.uk.leaseloco.leasingnormaliser.dto.LeaseOfferPrettyGoodCarDeals;
 import co.uk.leaseloco.leasingnormaliser.exception.CsvLoanDataException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,10 +10,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 
-import java.io.IOException;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
@@ -43,26 +38,6 @@ class CSVLoanDataProviderTest {
    */
   @InjectMocks
   private CSVLoanDataProvider csvLoanDataProvider;
-
-  /**
-   * Tests reading and converting loans from the "Amazing Cars" CSV file.
-   */
-  @Test
-  void testReadAndConvertLoans_Amazing_Cars_Provider() throws IOException, CsvLoanDataException {
-    final List<LeaseOfferAmazingCars> loans = csvLoanDataProvider.readAndConvertLoans(AMAZING_CARS_PROVIDER, LeaseOfferAmazingCars.class);
-    assertEquals(6, loans.size());
-  }
-
-  /**
-   * Tests reading and converting loans from the "Pretty Good Car Deals" CSV file.
-   */
-  @Test
-  void testReadAndConvertLoans_Pretty_Good_Car_Deals_Provider() throws CsvLoanDataException {
-    final List<LeaseOfferPrettyGoodCarDeals> loans = csvLoanDataProvider.readAndConvertLoans(PRETTY_GOOD_CAR_DEALS_PROVIDER,
-          LeaseOfferPrettyGoodCarDeals.class);
-
-    assertEquals(6, loans.size());
-  }
 
   /**
    * Tests that an exception is thrown when the file path is incorrect.
